@@ -1,7 +1,87 @@
-## Apps & Functions
+## Hacking on the JAMstack
 ### with
 
 ![Netlify](/img/full-logo-light.svg)<!-- .element: style="width: 50%" -->
+
+---
+
+### How do I even JAMstack?
+
+![](https://i.pinimg.com/originals/02/eb/0a/02eb0a01c39b4b07de7f3aa6a081ef5c.png)
+
+---
+
+### A full-stack app
+
+![](https://static.meijer.com/Media/005/15000/0051500000557_a1c1_0600.png)
+
+---
+
+### A JAMstack app
+
+![](/img/dougiejam.png)
+
+---
+
+### Backend APIs
+
+![](https://images-na.ssl-images-amazon.com/images/I/818pymVNdXL._SY606_.jpg)<!-- .element: style="float: left" -->
+
+---
+
+### Backend APIs
+
+![](https://images-na.ssl-images-amazon.com/images/I/818pymVNdXL._SY606_.jpg)<!-- .element: style="float: left" -->
+
+#### Third-party<!-- .element: style="margin-top: 1.5em" -->
+
+- Formspree
+- Clarifai
+- Pilon
+- Any other API
+
+---
+
+### Backend APIs
+
+![](https://images-na.ssl-images-amazon.com/images/I/818pymVNdXL._SY606_.jpg)<!-- .element: style="float: left" -->
+
+#### Build your own<!-- .element: style="margin-top: 1.5em" -->
+
+- Fauna
+- Hasura
+- Netlify Functions
+- Any other backend or cloud function
+
+---
+
+### Frontend
+
+![](https://s3.us-east-2.amazonaws.com/jms-s3-cx-rel-p-pmc4/assets/smuckers/images/products/13846.jpeg)<!-- .element: style="float: left" -->
+
+#### Frameworks<!-- .element: style="margin-top: 1.5em" -->
+
+- React
+- Vue
+- Angular
+- Any other framework
+- None at all
+
+---
+
+### Frontend
+
+![](https://s3.us-east-2.amazonaws.com/jms-s3-cx-rel-p-pmc4/assets/smuckers/images/products/13846.jpeg)<!-- .element: style="float: left" -->
+
+#### Next level: SSR at build-time<!-- .element: style="margin-top: 1em" -->
+
+- Gatsby
+- React Static
+- VuePress
+- Gridsome
+- Jekyll
+- Hugo
+- [Over 400 others](https://www.staticgen.com/)
 
 ---
 
@@ -9,9 +89,15 @@
 
 ---
 
-### Easy to deploy
+### Push to build
 
 ![](/img/steps.png)
+
+---
+
+### Deploy worldwide
+
+![](/img/adn.png)
 
 ---
 
@@ -45,13 +131,6 @@
 
 ---
 
-## [Deploy Previews](https://www.netlify.com/docs/webhooks/#github-pull-request-comments)
-
-![](/img/preview.png)
-
-
----
-
 ## [Form Handling](https://www.netlify.com/docs/form-handling)
 
 ![](/img/forms.png)
@@ -67,13 +146,6 @@
 ## [Lambda functions](https://www.netlify.com/docs/functions)
 
 ![](/img/functions.png)
-
----
-
-## 🏆 Netlify Prize 🏆
-
-### Best Use of Netlify Functions
-### $300 Amazon gift card
 
 ---
 
@@ -158,41 +230,11 @@ Add to your project:
 2. Include a `netlify.toml` file with the location of your [functions folder](#configuring-the-functions-folder).
 3. Put the source files in a *different* folder.
 
-
----
-
-## [Create React App Lambda](https://www.netlify.com/docs/functions/#create-react-app-lambda)
-
-Create React App with netlify-lambda built in!
-
-- a `src/lambda` folder for storing your functions source files
-- a premade `netlify.toml` file to set the functions folder
-
----
-
-## [Create React App Lambda](https://www.netlify.com/docs/functions/#create-react-app-lambda)
-
-Create React App with netlify-lambda built in!
-
-- built-in proxy redirect for local dev
-
-```
- `/.netlify/functions/hello` ️ ➡️ `http://localhost:9000/hello`
-```
-
----
-
-## [Create React App Lambda](https://www.netlify.com/docs/functions/#create-react-app-lambda)
-
-Clone and deploy with a single button!
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/biilmann/create-react-app-lambda)
-
 ---
 
 ## Environment Variables
 
-- Save in the Netlify UI
+Save in the Netlify UI
 
 ![](/img/variables.png)
 
@@ -211,8 +253,65 @@ const SECRET_API_KEY = process.env.SECRET_API_KEY;
 
 ## Environment Variables
 
-- Pass API calls through your function without exposing your key!
+Make API calls without exposing your key!
 
-![](/img/weather-call.png)
+```
+// Send greeting to Slack
+  return fetch(process.env.SLACK_WEBHOOK_URL, {
+    headers: {
+      "content-type": "application/json"
+    },
+    method: "POST",
+    body: JSON.stringify({ text: `${name} says hello!` })
+  })
+    .then(() => ({
+      statusCode: 200,
+      body: `Hello, ${name}! Your greeting has been sent to Slack 👋`
+    }))
+    .catch(error => ({
+      statusCode: 422,
+      body: `Oops! Something went wrong. ${error}`
+    }));
+};
+```
 
-[github.com/mattburrell/wishyouwerehere](https://github.com/mattburrell/wishyouwerehere)
+---
+
+## Examples to Get You Started
+
+[Create React App Lambda](https://www.netlify.com/docs/functions/#create-react-app-lambda)
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/biilmann/create-react-app-lambda)
+
+_Create React App with netlify-lambda built in_
+
+---
+
+## Examples to Get You Started
+
+[Netlify Function Example](https://github.com/netlify/netlify-functions-example) [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/biilmann/create-react-app-lambda)
+
+- Framework-free setup with netlify-lambda
+- [Demo site and guide](https://functions-playground.netlify.com/) with sample functions from basic to powerful
+- Lots more example repos in the README
+
+---
+
+## Features in Both Examples
+
+- a `src/lambda` folder for storing your functions source files
+- a premade `netlify.toml` file to set the functions folder
+- built-in proxy redirect for local dev
+
+```
+ `/.netlify/functions/hello` ️ ➡️ `http://localhost:9000/hello`
+```
+
+---
+
+## More Resources
+
+- [JAMstack vs Isomorphic Server Side Rendering](https://www.netlify.com/blog/2017/06/06/jamstack-vs-isomorphic-server-side-rendering/)
+- [How to add Netlify Identity service to React projects](https://www.netlify.com/blog/2017/10/30/how-to-add-netlify-identity-service-to-react-projects/)
+- [How to setup serverless OAuth Flows with Netlify Functions & Intercom](https://www.netlify.com/blog/2018/07/30/how-to-setup-serverless-oauth-flows-with-netlify-functions--intercom/)
+- [Building Serverless CRUD apps with Netlify Functions & FaunaDB](https://www.netlify.com/blog/2018/07/09/building-serverless-crud-apps-with-netlify-functions--faunadb/)
