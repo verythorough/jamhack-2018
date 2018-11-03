@@ -1,0 +1,38 @@
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.reveal h1,
+.reveal h2 {
+  font-weight: 500;
+}
+
+
+.reveal a {
+  color: #00b09f;
+  font-weight: 500;
+}
+
+.reveal a:hover {
+  color: #00b09f;
+  text-decoration: underline;
+}
+
+.reveal section img {
+  background: none;
+  border: none;
+  box-shadow: none;
+  max-height: 50vh;
+}
+
+.reveal footer {
+  position: fixed;
+  bottom: 0;
+  margin: 0.5em;
+  font-size: 80%;
+}
