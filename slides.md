@@ -51,7 +51,7 @@
 - Fauna
 - Hasura
 - Netlify Functions
-- Any other backend or cloud function
+- Any other backend <br>or cloud function
 
 ---
 
