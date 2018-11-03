@@ -59,6 +59,12 @@
 
 ![](https://s3.us-east-2.amazonaws.com/jms-s3-cx-rel-p-pmc4/assets/smuckers/images/products/13846.jpeg)<!-- .element: style="float: left" -->
 
+---
+
+### Frontend
+
+![](https://s3.us-east-2.amazonaws.com/jms-s3-cx-rel-p-pmc4/assets/smuckers/images/products/13846.jpeg)<!-- .element: style="float: left" -->
+
 #### Frameworks<!-- .element: style="margin-top: 1.5em" -->
 
 - React
@@ -77,7 +83,6 @@
 
 - Gatsby
 - React Static
-- VuePress
 - Gridsome
 - Jekyll
 - Hugo
@@ -113,12 +118,6 @@
 
 ---
 
-## [Prerendering](https://www.netlify.com/docs/prerendering)
-
-![](/img/prerendering.png)
-
----
-
 ## [Proxy Redirects](https://www.netlify.com/docs/redirects)
 
 ```
@@ -128,12 +127,6 @@
 /api/*  https://api.example.com/:splat  200
 
 ```
-
----
-
-## [Form Handling](https://www.netlify.com/docs/form-handling)
-
-![](/img/forms.png)
 
 ---
 
@@ -153,7 +146,6 @@
 
 - authenticated API calls from the frontend
 - webhook listeners & event-driven workflows
-- chatbots & voice apps (Alexa, Google Home)
 - all your awesome hackathon ideas!
 
 ---
