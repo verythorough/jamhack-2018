@@ -1,7 +1,9 @@
 ## Hacking on the JAMstack
-### with
+with
 
-![Netlify](/img/full-logo-light.svg)<!-- .element: style="width: 50%" -->
+![Netlify](/img/full-logo-light.svg)<!-- .element: style="width: 30%" -->
+
+Jump to [Day 2 Tips →](#day2)
 
 ---
 
@@ -307,3 +309,128 @@ _Create React App with netlify-lambda built in_
 - [How to add Netlify Identity service to React projects](https://www.netlify.com/blog/2017/10/30/how-to-add-netlify-identity-service-to-react-projects/)
 - [How to setup serverless OAuth Flows with Netlify Functions & Intercom](https://www.netlify.com/blog/2018/07/30/how-to-setup-serverless-oauth-flows-with-netlify-functions--intercom/)
 - [Building Serverless CRUD apps with Netlify Functions & FaunaDB](https://www.netlify.com/blog/2018/07/09/building-serverless-crud-apps-with-netlify-functions--faunadb/)
+
+---
+
+# Day 2 Tips<!-- .element: id="day2" -->
+
+---
+
+## Troubleshooting Builds
+
+- [Build troubleshooting doc](https://www.netlify.com/docs/build-gotchas/)
+- [Build settings doc](https://www.netlify.com/docs/build-settings/)
+- [Stack Overflow questions & answers](https://stackoverflow.com/questions/tagged/netlify)
+
+---
+
+## Netlify Identity
+
+- [Commands & events for `<script>` tag method](https://github.com/netlify/netlify-identity-widget#usage)
+- [Commands & events for npm module](https://github.com/netlify/netlify-identity-widget#module-api)
+- [Example using React](https://github.com/netlify/netlify-identity-widget/blob/master/example/src/App.js)
+- Build your own with [gotrue-js](https://github.com/netlify/gotrue-js)
+- [Use with Functions](https://www.netlify.com/docs/functions/#identity-and-functions)
+
+---
+
+## Functions
+
+Check out the examples at <br>[functions-playground.netlify.com](https://functions-playground.netlify.com/)!
+
+---
+
+## Functions
+
+Running `netlify-lambda` as a local dependency
+
+Excerpts from [`package.json`](https://github.com/netlify/netlify-functions-example/blob/master/package.json):
+
+```
+"devDependencies": {
+  "netlify-lambda": "^0.4.0",
+}
+```
+```
+"scripts": {
+  "start:server": "netlify-lambda serve src/lambda",
+  "build:server": "netlify-lambda build src/lambda"
+}
+```
+
+---
+
+## Functions
+
+Sample using another module in a function
+
+In the [function code](https://github.com/netlify/netlify-functions-example/blob/master/src/lambda/hello_fetch.js#L1): 
+
+```
+import fetch from "node-fetch";
+```
+
+In the [`package.json`](https://github.com/netlify/netlify-functions-example/blob/master/package.json#L28):
+
+```
+  "devDependencies": {
+    "netlify-lambda": "^0.4.0",
+    "node-fetch": "^2.1.2",
+  },
+```
+
+---
+
+## Remember PB & J
+
+"Can I run Hasura on Netlify?"
+
+![](https://imgflip.com/s/meme/Question-Rage-Face.jpg)
+
+---
+
+## Remember PB & J
+
+![](https://images-na.ssl-images-amazon.com/images/I/818pymVNdXL._SY606_.jpg) &nbsp;&nbsp;&nbsp; ![](https://s3.us-east-2.amazonaws.com/jms-s3-cx-rel-p-pmc4/assets/smuckers/images/products/13846.jpeg)
+
+---
+
+## Remember PB & J
+
+![](/img/hasurapb.jpg) &nbsp;&nbsp;&nbsp; ![](https://s3.us-east-2.amazonaws.com/jms-s3-cx-rel-p-pmc4/assets/smuckers/images/products/13846.jpeg)
+
+---
+
+## Remember PB & J
+
+![](/img/hasurapb.jpg) &nbsp;&nbsp;&nbsp; ![](/img/netlifyjam.jpg)
+
+
+---
+
+## Remember PB & J
+
+Put 'em in a sandwich: 
+
+[Hasura events triggering Netlify functions](https://mobile.twitter.com/tanmaigo/status/1058846415013605376)
+
+---
+
+## Gatsby Tips
+
+- Environment variables must be prefixed with `GATSBY_`
+- [Gatsby + Netlify tips blog post](https://www.netlify.com/blog/2018/06/28/5-pro-tips-and-plugins-for-optimizing-your-gatsby---netlify-site/)
+- [Proxy example for netlify-lambda local dev](https://www.gatsbyjs.org/docs/api-proxy/?no-cache=1#advanced-proxying)
+
+---
+
+## More Features
+
+- [Branch deploys](https://www.netlify.com/docs/continuous-deployment/#branch-deploy-controls)
+- [Geo IP and language redirects](https://www.netlify.com/docs/redirects/#geoip-and-language-based-redirects)
+
+---
+
+## Don't be afraid to ask questions!!
+
+We're all here to help!
