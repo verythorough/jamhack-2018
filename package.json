@@ -7,7 +7,7 @@
   "main": "js/reveal.js",
   "scripts": {
     "start": "grunt serve",
-    "build": "echo hello && grunt"
+    "build": "echo $HELLO && grunt"
   },
   "author": {
     "name": "Hakim El Hattab",
